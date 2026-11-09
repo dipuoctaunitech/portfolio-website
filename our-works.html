@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Works — OctaUnitech Solutions Pvt. Ltd.</title>
+  <meta name="description" content="Selected work from OctaUnitech — cloud, software, and integration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1c1915",
+            cream: "#f6f1e8",
+            creamSoft: "#faf6ef",
+            mist: "#f6f1e8",
+            sea: "#3d6b74",
+            seaDark: "#2f545c",
+            sand: "#e4d9c8",
+          },
+          fontFamily: {
+            display: ['"Instrument Serif"', "Georgia", "serif"],
+            sans: ['"Sora"', "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* html scroll handled by page-frame */
+
+    /* body layout handled by page-frame */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-in {
+      animation: heroIn 0.9s ease forwards;
+    }
+
+    .hero-in-delay-1 { animation-delay: 0.12s; opacity: 0; }
+    .hero-in-delay-2 { animation-delay: 0.24s; opacity: 0; }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1.5px;
+      background: currentColor;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.is-active::after {
+      width: 100%;
+    }
+
+    .work-image {
+      transition: transform 0.6s ease;
+    }
+
+    article:hover .work-image {
+      transform: scale(1.03);
+    }
+  
+    .stats-ribbon {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      height: var(--stats-ribbon-h);
+      display: flex;
+      align-items: center;
+      background: rgba(28, 25, 21, 0.72);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border-top: 1px solid rgba(228, 217, 200, 0.28);
+      box-shadow: 0 -8px 32px rgba(28, 25, 21, 0.12);
+    }
+
+    .stats-ribbon .stat + .stat {
+      border-left: 1px solid rgba(228, 217, 200, 0.18);
+    }
+
+  
+    .header-ribbon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      height: var(--header-ribbon-h);
+      display: flex;
+      align-items: center;
+      background: rgba(250, 246, 239, 0.72);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border-bottom: 1px solid rgba(228, 217, 200, 0.45);
+      box-shadow: 0 8px 28px rgba(28, 25, 21, 0.06);
+    }
+
+
+
+
+    :root {
+      --frame: clamp(0.75rem, 1.8vw, 1.5rem);
+      --header-ribbon-h: 7rem;
+      --stats-ribbon-h: 8.75rem;
+      --frame-grey: #c9ced3;
+      --frame-grey-deep: #b7bdc4;
+      --side-rail-w: 0px;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--frame-grey) 0%, var(--frame-grey-deep) 100%);
+    }
+
+    .page-frame {
+      position: fixed;
+      inset: 0;
+      padding: var(--frame);
+      background:
+        linear-gradient(145deg, #d5d9de 0%, var(--frame-grey) 42%, var(--frame-grey-deep) 100%);
+    }
+
+    .page-chrome {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0.2rem;
+      background:
+        radial-gradient(ellipse 70% 45% at 8% 0%, rgba(180, 160, 130, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 100% 10%, rgba(120, 140, 180, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #f6f1e8 0%, #faf6ef 45%, #f3ebe0 100%);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 0 0 1px rgba(70, 78, 88, 0.18),
+        0 18px 40px rgba(40, 46, 54, 0.18);
+    }
+
+    .page-scroll {
+      position: absolute;
+      inset: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-ribbon-h);
+      scroll-padding-bottom: var(--stats-ribbon-h);
+      padding-top: var(--header-ribbon-h);
+      padding-bottom: var(--stats-ribbon-h);
+      padding-left: var(--side-rail-w);
+      padding-right: var(--side-rail-w);
+    }
+
+
+    
+
+    
+
+
+    .side-rail {
+      position: absolute;
+      top: var(--header-ribbon-h);
+      bottom: var(--stats-ribbon-h);
+      z-index: 35;
+      width: var(--side-rail-w);
+      background: rgba(210, 215, 220, 0.45);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      pointer-events: none;
+    }
+
+    .side-rail--left {
+      left: 0;
+      border-right: 1px solid rgba(180, 188, 196, 0.55);
+      box-shadow:
+        inset -8px 0 24px rgba(28, 25, 21, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .side-rail--right {
+      right: 0;
+      border-left: 1px solid rgba(180, 188, 196, 0.55);
+      box-shadow:
+        inset 8px 0 24px rgba(28, 25, 21, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+  </style>
+</head>
+<body class="font-sans text-ink antialiased">
+  <div class="page-frame">
+    <div class="page-chrome">
+
+  <header class="header-ribbon">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 md:px-8">
+      <a href="index.html" class="inline-flex items-center">
+        <img src="images/logo.png" alt="OctaUnitech" class="h-[4.5rem] w-auto sm:h-20" />
+      </a>
+      <nav class="hidden items-center gap-8 text-sm text-ink/75 sm:flex">
+        <a href="index.html#about" class="nav-link">Who We Are</a>
+        <a href="index.html#vision" class="nav-link">Vision</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#why" class="nav-link">Why Us</a>
+        <a href="our-works.html" class="nav-link is-active text-ink">Our Works</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <a
+        href="index.html#contact"
+        class="rounded-sm bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-seaDark"
+      >
+        Contact
+      </a>
+    </div>
+  </header>
+
+      <div class="page-scroll" id="page-scroll">
+  <main>
+    <section class="mx-auto max-w-6xl px-6 pb-10 pt-16 md:px-8 md:pb-14 md:pt-24">
+      <p class="hero-in text-sm font-medium uppercase tracking-[0.18em] text-sea">Works</p>
+      <h1 class="hero-in hero-in-delay-1 mt-3 font-display text-5xl leading-none tracking-tight md:text-7xl">
+        Selected projects
+      </h1>
+      <p class="hero-in hero-in-delay-2 mt-5 max-w-md text-base text-ink/70">
+        Quiet results. Clear craft.
+      </p>
+    </section>
+
+    <!--
+      HOW TO ADD A NEW WORK ITEM:
+      1. Copy one <article>...</article> block below
+      2. Paste it after the last article (before </div>)
+      3. Update the image src/alt, title, description, and category label
+      Tip: For alternating layout, swap md:order-1 / md:order-2 like the second item
+    -->
+    <section class="mx-auto max-w-6xl px-6 pb-20 md:px-8 md:pb-28">
+      <div class="space-y-16 md:space-y-24">
+
+        <a href="projects/fleetwright.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden bg-ink md:col-span-7">
+            <img
+              src="images/fleetwright/hero.png"
+              alt="Fleetwright aviation management platform"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Fleetwright</h2>
+            <p class="mt-3 text-ink/70">
+              One platform — total aviation management.
+            </p>
+            <p class="mt-4 text-sm font-medium text-sea">Aviation · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/forma.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7 md:order-2">
+            <img
+              src="images/forma/store.jpg"
+              alt="Forma pets e-commerce platform"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:order-1 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Forma</h2>
+            <p class="mt-3 text-ink/70">
+              Pets e‑commerce—store, grooming, and care.
+            </p>
+            <p class="mt-4 text-sm font-medium text-sea">E‑commerce · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/cloud-migration.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7">
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80"
+              alt="Cloud infrastructure visualization"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Cloud migration</h2>
+            <p class="mt-3 text-ink/70">Core workloads, lighter footprint, faster releases.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Cloud · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/software-development.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80"
+              alt="Team collaborating on software development"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:order-1 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Software development</h2>
+            <p class="mt-3 text-ink/70">Platforms built around real workflows.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Software · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/operations-portal.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80"
+              alt="Business analytics dashboard"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:order-1 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Operations portal</h2>
+            <p class="mt-3 text-ink/70">Scheduling and reporting in one calm view.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Web · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/system-integration.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7">
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
+              alt="Technology team in a modern workspace"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">System integration</h2>
+            <p class="mt-3 text-ink/70">Legacy and modern, speaking the same language.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Integration · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/field-sales-app.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80"
+              alt="Mobile application on a smartphone"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:order-1 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Field sales app</h2>
+            <p class="mt-3 text-ink/70">Orders offline. Sync when ready.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Mobile · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/finance-dashboard.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
+              alt="Data analytics charts on a screen"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Finance dashboard</h2>
+            <p class="mt-3 text-ink/70">One live view for leadership KPIs.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Analytics · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/invoice-rpa.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=80"
+              alt="Automation and robotics concept"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:order-1 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">Invoice RPA</h2>
+            <p class="mt-3 text-ink/70">Intake to posting—without the busywork.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Automation · View project →</p>
+          </div>
+        </a>
+
+        <a href="projects/qa-automation.html" class="reveal group grid gap-8 md:grid-cols-12 md:items-end">
+          <div class="overflow-hidden md:col-span-7">
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80"
+              alt="Quality testing and engineering workspace"
+              class="work-image aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="md:col-span-5 md:pb-2">
+            <h2 class="font-display text-3xl transition group-hover:text-sea md:text-4xl">QA automation</h2>
+            <p class="mt-3 text-ink/70">Regression and release confidence, on cue.</p>
+            <p class="mt-4 text-sm font-medium text-sea">Testing · View project →</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="border-t border-sand bg-ink text-white">
+      <div class="mx-auto max-w-6xl px-6 py-16 md:flex md:items-end md:justify-between md:px-8 md:py-20">
+        <div class="reveal max-w-xl">
+          <h2 class="font-display text-3xl md:text-4xl">Shall we begin?</h2>
+          <p class="mt-3 text-white/70">
+            A short note is enough.
+          </p>
+        </div>
+        <a
+          href="mailto:sales@octaunitech.com"
+          class="reveal mt-8 inline-block rounded-sm bg-sea px-6 py-3 text-sm font-medium text-white transition hover:bg-seaDark md:mt-0"
+        >
+          sales@octaunitech.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink text-white/55">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm md:flex-row md:items-center md:justify-between md:px-8">
+      <p>© <span id="year"></span> OctaUnitech Solutions Pvt. Ltd.</p>
+      <p><a href="index.html" class="transition hover:text-white">Home</a> · Our Works</p>
+    </div>
+  </footer>
+
+
+          </div>
+
+      <aside class="stats-ribbon" aria-label="Company highlights">
+    <div class="mx-auto flex w-full max-w-6xl items-center gap-4 px-3 sm:gap-8 sm:px-6 md:px-8">
+      <a href="index.html" class="hidden shrink-0 sm:inline-flex">
+        <img
+          src="images/logo-full.jpg"
+          alt="OctaUnitech Solutions Pvt. Ltd."
+          class="h-24 w-auto md:h-28"
+        />
+      </a>
+      <div class="grid min-w-0 flex-1 grid-cols-3 divide-x divide-white/10">
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">16+</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Years of Excellence</p>
+        </div>
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">200+</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Projects Delivered</p>
+        </div>
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">F500</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Trusted Partners</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+      </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function updateSideRails() {
+      const chrome = document.querySelector(".page-chrome");
+      const header = document.querySelector(".header-ribbon");
+      const stats = document.querySelector(".stats-ribbon");
+      if (!chrome || !header || !stats) return;
+
+      const chromeW = chrome.getBoundingClientRect().width;
+      const heroH =
+        chrome.getBoundingClientRect().height -
+        header.offsetHeight -
+        stats.offsetHeight;
+      const wallpaperW = Math.min(chromeW, heroH * (16 / 9));
+      const side = Math.max(0, (chromeW - wallpaperW) / 2);
+      document.documentElement.style.setProperty("--side-rail-w", side + "px");
+    }
+
+    updateSideRails();
+    window.addEventListener("resize", updateSideRails);
+
+
+    const pageScroll = document.getElementById("page-scroll");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: pageScroll, threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

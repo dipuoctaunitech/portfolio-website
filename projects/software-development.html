@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software development | OctaUnitech</title>
+  <meta name="description" content="Platforms built around real workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1c1915",
+            cream: "#f6f1e8",
+            creamSoft: "#faf6ef",
+            mist: "#f6f1e8",
+            sea: "#3d6b74",
+            seaDark: "#2f545c",
+            sand: "#e4d9c8",
+          },
+          fontFamily: {
+            display: ['"Instrument Serif"', "Georgia", "serif"],
+            sans: ['"Sora"', "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* html scroll handled by page-frame */
+    /* body layout handled by page-frame */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .hero-in { animation: heroIn 0.9s ease forwards; }
+    .hero-in-delay-1 { animation-delay: 0.12s; opacity: 0; }
+    .hero-in-delay-2 { animation-delay: 0.24s; opacity: 0; }
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 1.5px;
+      background: currentColor; transition: width 0.25s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .motif-line { display: flex; align-items: center; gap: 0.75rem; }
+    .motif-rule { display: block; width: 2rem; height: 1px; background: linear-gradient(90deg, #3d6b74, rgba(61, 107, 116, 0.2)); }
+    .motif-dot { width: 5px; height: 5px; border-radius: 999px; background: #3d6b74; flex-shrink: 0; }
+  
+    .stats-ribbon {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      height: var(--stats-ribbon-h);
+      display: flex;
+      align-items: center;
+      background: rgba(28, 25, 21, 0.72);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border-top: 1px solid rgba(228, 217, 200, 0.28);
+      box-shadow: 0 -8px 32px rgba(28, 25, 21, 0.12);
+    }
+
+    .stats-ribbon .stat + .stat {
+      border-left: 1px solid rgba(228, 217, 200, 0.18);
+    }
+
+  
+    .header-ribbon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      height: var(--header-ribbon-h);
+      display: flex;
+      align-items: center;
+      background: rgba(250, 246, 239, 0.72);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border-bottom: 1px solid rgba(228, 217, 200, 0.45);
+      box-shadow: 0 8px 28px rgba(28, 25, 21, 0.06);
+    }
+
+
+
+
+    :root {
+      --frame: clamp(0.75rem, 1.8vw, 1.5rem);
+      --header-ribbon-h: 7rem;
+      --stats-ribbon-h: 8.75rem;
+      --frame-grey: #c9ced3;
+      --frame-grey-deep: #b7bdc4;
+      --side-rail-w: 0px;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--frame-grey) 0%, var(--frame-grey-deep) 100%);
+    }
+
+    .page-frame {
+      position: fixed;
+      inset: 0;
+      padding: var(--frame);
+      background:
+        linear-gradient(145deg, #d5d9de 0%, var(--frame-grey) 42%, var(--frame-grey-deep) 100%);
+    }
+
+    .page-chrome {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0.2rem;
+      background:
+        radial-gradient(ellipse 70% 45% at 8% 0%, rgba(180, 160, 130, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 100% 10%, rgba(120, 140, 180, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #f6f1e8 0%, #faf6ef 45%, #f3ebe0 100%);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 0 0 1px rgba(70, 78, 88, 0.18),
+        0 18px 40px rgba(40, 46, 54, 0.18);
+    }
+
+    .page-scroll {
+      position: absolute;
+      inset: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-ribbon-h);
+      scroll-padding-bottom: var(--stats-ribbon-h);
+      padding-top: var(--header-ribbon-h);
+      padding-bottom: var(--stats-ribbon-h);
+      padding-left: var(--side-rail-w);
+      padding-right: var(--side-rail-w);
+    }
+
+
+    
+
+    
+
+
+    .side-rail {
+      position: absolute;
+      top: var(--header-ribbon-h);
+      bottom: var(--stats-ribbon-h);
+      z-index: 35;
+      width: var(--side-rail-w);
+      background: rgba(210, 215, 220, 0.45);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      pointer-events: none;
+    }
+
+    .side-rail--left {
+      left: 0;
+      border-right: 1px solid rgba(180, 188, 196, 0.55);
+      box-shadow:
+        inset -8px 0 24px rgba(28, 25, 21, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .side-rail--right {
+      right: 0;
+      border-left: 1px solid rgba(180, 188, 196, 0.55);
+      box-shadow:
+        inset 8px 0 24px rgba(28, 25, 21, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+  </style>
+</head>
+<body class="font-sans text-ink antialiased">
+  <div class="page-frame">
+    <div class="page-chrome">
+
+  <header class="header-ribbon">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 md:px-8">
+      <a href="../index.html" class="inline-flex items-center">
+        <img src="../images/logo.png" alt="OctaUnitech" class="h-[4.5rem] w-auto sm:h-20" />
+      </a>
+      <nav class="hidden items-center gap-8 text-sm text-ink/75 sm:flex">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <a href="../our-works.html" class="nav-link">Our Works</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="../our-works.html" class="rounded-sm border border-ink/15 px-4 py-2 text-sm font-medium text-ink transition hover:bg-creamSoft">All works</a>
+    </div>
+  </header>
+
+      <div class="page-scroll" id="page-scroll">
+  <main>
+    <section class="mx-auto max-w-6xl px-6 pb-10 pt-14 md:px-8 md:pb-12 md:pt-20">
+      <p class="hero-in text-sm font-medium uppercase tracking-[0.18em] text-sea">
+        <a href="../our-works.html" class="transition hover:text-ink">Works</a>
+        <span class="mx-2 text-ink/30">/</span>
+        Software development
+      </p>
+      <h1 class="hero-in hero-in-delay-1 mt-4 font-display text-5xl leading-none tracking-tight md:text-7xl">Software development</h1>
+      <p class="hero-in hero-in-delay-2 mt-4 max-w-xl text-lg text-ink/70">Platforms built around real workflows.</p>
+      <p class="mt-3 text-sm font-medium text-sea">Software</p>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 md:px-8">
+      <div class="reveal overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80" alt="Team collaborating on software development" class="aspect-[16/9] w-full object-cover" />
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
+      <div class="reveal grid gap-12 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <p class="text-sm font-medium uppercase tracking-[0.18em] text-sea">Overview</p>
+          <h2 class="mt-3 font-display text-3xl md:text-4xl">Applications shaped to how teams actually work—from discovery to launch.</h2>
+        </div>
+        <div class="md:col-span-7 space-y-3">
+          <div class="motif-line text-sm text-ink/65">
+            <span class="motif-dot"></span>
+            <span class="motif-rule"></span>
+            <span>Discover — goals before code</span>
+          </div>
+          <div class="motif-line text-sm text-ink/65">
+            <span class="motif-dot"></span>
+            <span class="motif-rule"></span>
+            <span>Build — usable slices, early</span>
+          </div>
+          <div class="motif-line text-sm text-ink/65">
+            <span class="motif-dot"></span>
+            <span class="motif-rule"></span>
+            <span>Refine — iterate with feedback</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-sand bg-ink text-white">
+      <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 md:flex-row md:items-end md:justify-between md:px-8 md:py-20">
+        <div class="reveal max-w-lg">
+          <h2 class="font-display text-3xl md:text-4xl">Next project?</h2>
+          <p class="mt-3 text-white/70">A short note is enough.</p>
+        </div>
+        <div class="reveal flex flex-wrap gap-3">
+          <a href="../our-works.html" class="rounded-sm border border-white/25 px-5 py-3 text-sm font-medium transition hover:bg-white/10">All works</a>
+          <a href="mailto:sales@octaunitech.com" class="rounded-sm bg-sea px-5 py-3 text-sm font-medium transition hover:bg-seaDark">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink text-white/55">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm md:flex-row md:items-center md:justify-between md:px-8">
+      <p>© <span id="year"></span> OctaUnitech Solutions Pvt. Ltd.</p>
+      <p>Software development</p>
+    </div>
+  </footer>
+
+
+          </div>
+
+      <aside class="stats-ribbon" aria-label="Company highlights">
+    <div class="mx-auto flex w-full max-w-6xl items-center gap-4 px-3 sm:gap-8 sm:px-6 md:px-8">
+      <a href="../index.html" class="hidden shrink-0 sm:inline-flex">
+        <img
+          src="../images/logo-full.jpg"
+          alt="OctaUnitech Solutions Pvt. Ltd."
+          class="h-24 w-auto md:h-28"
+        />
+      </a>
+      <div class="grid min-w-0 flex-1 grid-cols-3 divide-x divide-white/10">
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">16+</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Years of Excellence</p>
+        </div>
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">200+</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Projects Delivered</p>
+        </div>
+        <div class="stat px-2 py-4 text-center sm:px-4">
+          <p class="font-display text-2xl leading-none text-creamSoft sm:text-3xl md:text-4xl">F500</p>
+          <p class="mt-2.5 text-xs uppercase tracking-[0.14em] text-white/55 sm:text-sm">Trusted Partners</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+      </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function updateSideRails() {
+      const chrome = document.querySelector(".page-chrome");
+      const header = document.querySelector(".header-ribbon");
+      const stats = document.querySelector(".stats-ribbon");
+      if (!chrome || !header || !stats) return;
+
+      const chromeW = chrome.getBoundingClientRect().width;
+      const heroH =
+        chrome.getBoundingClientRect().height -
+        header.offsetHeight -
+        stats.offsetHeight;
+      const wallpaperW = Math.min(chromeW, heroH * (16 / 9));
+      const side = Math.max(0, (chromeW - wallpaperW) / 2);
+      document.documentElement.style.setProperty("--side-rail-w", side + "px");
+    }
+
+    updateSideRails();
+    window.addEventListener("resize", updateSideRails);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

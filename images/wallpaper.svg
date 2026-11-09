@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Cloud Migration, Development, System Integration, Digital Transformation">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f8fc"/>
+    </linearGradient>
+    <linearGradient id="waveTL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a3d" stop-opacity="0.5"/>
+      <stop offset="48%" stop-color="#9b6bff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5ec8ff" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="waveBR" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff8a3d" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#8b5cf6" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="tileTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8f4ff"/>
+    </linearGradient>
+    <linearGradient id="tileBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5bb8ff"/>
+      <stop offset="100%" stop-color="#1d6fe8"/>
+    </linearGradient>
+    <linearGradient id="tilePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="tileBottom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7db8ff"/>
+      <stop offset="100%" stop-color="#2f6fe0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1e3a8a" flood-opacity="0.16"/>
+    </filter>
+    <filter id="glowOrange" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#fb923c" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- Atmosphere waves -->
+  <path d="M-80 200 C160 20 300 240 520 80 C700 -30 860 130 1040 35 L1040 0 L-80 0 Z" fill="url(#waveTL)"/>
+  <path d="M-50 280 C200 80 360 290 580 140 C780 20 960 170 1160 70" fill="none" stroke="#ff9f5a" stroke-width="36" stroke-linecap="round" opacity="0.32"/>
+  <path d="M-20 330 C230 120 400 310 640 170 C830 60 1000 200 1200 110" fill="none" stroke="#8b7cf7" stroke-width="22" stroke-linecap="round" opacity="0.24"/>
+  <path d="M2000 850 C1760 1020 1580 760 1340 930 C1160 1040 1000 860 820 970 L820 1080 L2000 1080 Z" fill="url(#waveBR)"/>
+  <path d="M2000 750 C1740 950 1540 700 1280 880 C1100 1000 920 840 740 950" fill="none" stroke="#ff9f5a" stroke-width="32" stroke-linecap="round" opacity="0.28"/>
+
+  <!-- Dot grids -->
+  <g fill="#c9d1da">
+    <g transform="translate(1768 78)">
+      <circle cx="0" cy="0" r="3.5"/><circle cx="18" cy="0" r="3.5"/><circle cx="36" cy="0" r="3.5"/><circle cx="54" cy="0" r="3.5"/>
+      <circle cx="0" cy="18" r="3.5"/><circle cx="18" cy="18" r="3.5"/><circle cx="36" cy="18" r="3.5"/><circle cx="54" cy="18" r="3.5"/>
+      <circle cx="0" cy="36" r="3.5"/><circle cx="18" cy="36" r="3.5"/><circle cx="36" cy="36" r="3.5"/><circle cx="54" cy="36" r="3.5"/>
+    </g>
+    <g transform="translate(96 936)">
+      <circle cx="0" cy="0" r="3.5"/><circle cx="18" cy="0" r="3.5"/><circle cx="36" cy="0" r="3.5"/><circle cx="54" cy="0" r="3.5"/>
+      <circle cx="0" cy="18" r="3.5"/><circle cx="18" cy="18" r="3.5"/><circle cx="36" cy="18" r="3.5"/><circle cx="54" cy="18" r="3.5"/>
+      <circle cx="0" cy="36" r="3.5"/><circle cx="18" cy="36" r="3.5"/><circle cx="36" cy="36" r="3.5"/><circle cx="54" cy="36" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="Sora, Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#1e3a5f">
+    <!-- Cloud Migration -->
+    <g transform="translate(150 245)">
+      <rect x="0" y="-30" width="60" height="60" rx="14" fill="#fff7ed" stroke="#fb923c" stroke-width="2.5"/>
+      <path d="M15 6h18a11 11 0 1 1 0 22H15a10 10 0 1 1 0-22z" fill="none" stroke="#f97316" stroke-width="3.2"/>
+      <path d="M24 10v16M17 18l7-8 7 8" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="74" y1="0" x2="88" y2="0" stroke="#cbd5e1" stroke-width="3"/>
+      <text x="104" y="11">Cloud Migration</text>
+      <line x1="410" y1="0" x2="1000" y2="18" stroke="#fb923c" stroke-width="2.5"/>
+      <circle cx="1000" cy="18" r="6.5" fill="#fb923c"/>
+    </g>
+
+    <!-- Development -->
+    <g transform="translate(150 400)">
+      <rect x="0" y="-30" width="60" height="60" rx="14" fill="#eff6ff" stroke="#60a5fa" stroke-width="2.5"/>
+      <text x="9" y="11" font-size="22" fill="#2563eb" font-family="Menlo, Consolas, monospace" font-weight="700">&lt;/&gt;</text>
+      <line x1="74" y1="0" x2="88" y2="0" stroke="#cbd5e1" stroke-width="3"/>
+      <text x="104" y="11">Development</text>
+      <line x1="360" y1="0" x2="1045" y2="110" stroke="#60a5fa" stroke-width="2.5"/>
+      <circle cx="1045" cy="110" r="6.5" fill="#60a5fa"/>
+    </g>
+
+    <!-- System Integration -->
+    <g transform="translate(150 555)">
+      <rect x="0" y="-30" width="60" height="60" rx="14" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2.5"/>
+      <rect x="15" y="-10" width="30" height="8" rx="2" fill="#7c3aed"/>
+      <rect x="15" y="2" width="30" height="8" rx="2" fill="#8b5cf6"/>
+      <rect x="15" y="14" width="30" height="8" rx="2" fill="#a78bfa"/>
+      <line x1="74" y1="0" x2="88" y2="0" stroke="#cbd5e1" stroke-width="3"/>
+      <text x="104" y="11">System Integration</text>
+      <line x1="450" y1="0" x2="1090" y2="205" stroke="#a78bfa" stroke-width="2.5"/>
+      <circle cx="1090" cy="205" r="6.5" fill="#a78bfa"/>
+    </g>
+
+    <!-- Digital Transformation -->
+    <g transform="translate(150 710)">
+      <rect x="0" y="-30" width="60" height="60" rx="14" fill="#fff7ed" stroke="#fb923c" stroke-width="2.5"/>
+      <rect x="13" y="12" width="7" height="14" fill="#f97316"/>
+      <rect x="24" y="2" width="7" height="24" fill="#f97316"/>
+      <rect x="35" y="-8" width="7" height="34" fill="#f97316"/>
+      <rect x="46" y="-16" width="7" height="42" fill="#f97316"/>
+      <line x1="74" y1="0" x2="88" y2="0" stroke="#cbd5e1" stroke-width="3"/>
+      <text x="104" y="11">Digital Transformation</text>
+      <line x1="510" y1="0" x2="1135" y2="295" stroke="#fb923c" stroke-width="2.5"/>
+      <circle cx="1135" cy="295" r="6.5" fill="#fb923c"/>
+    </g>
+  </g>
+
+  <!-- Isometric tile stack -->
+  <g transform="translate(1200 120)" filter="url(#softShadow)">
+    <!-- Tile 1 -->
+    <g transform="translate(0 0)" filter="url(#glowOrange)">
+      <rect x="0" y="0" width="280" height="280" rx="46" fill="url(#tileTop)" stroke="#fb923c" stroke-width="7" transform="rotate(8 140 140)"/>
+      <g transform="translate(82 82)">
+        <path d="M26 78h68a38 38 0 0 0 0-76 44 44 0 0 0-84 16A30 30 0 0 0 26 78z" fill="#38bdf8"/>
+        <path d="M60 36v42M42 56l18-20 18 20" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Tile 2 -->
+    <g transform="translate(45 125)">
+      <rect x="0" y="0" width="280" height="280" rx="46" fill="url(#tileBlue)" transform="rotate(8 140 140)"/>
+      <text x="62" y="168" fill="#fff" font-size="78" font-family="Menlo, Consolas, monospace" font-weight="700">&lt;/&gt;</text>
+    </g>
+
+    <!-- Tile 3 -->
+    <g transform="translate(90 250)">
+      <rect x="0" y="0" width="280" height="280" rx="46" fill="url(#tilePurple)" transform="rotate(8 140 140)"/>
+      <g transform="translate(84 92)" fill="#fff">
+        <rect x="0" y="0" width="112" height="30" rx="6"/>
+        <rect x="0" y="42" width="112" height="30" rx="6" opacity="0.9"/>
+        <rect x="0" y="84" width="112" height="30" rx="6" opacity="0.78"/>
+      </g>
+    </g>
+
+    <!-- Tile 4 -->
+    <g transform="translate(135 375)" filter="url(#glowOrange)">
+      <rect x="0" y="0" width="280" height="280" rx="46" fill="url(#tileBottom)" stroke="#fb923c" stroke-width="7" transform="rotate(8 140 140)"/>
+      <g transform="translate(74 84)">
+        <rect x="18" y="34" width="132" height="94" rx="10" fill="#fff"/>
+        <rect x="60" y="18" width="48" height="18" rx="5" fill="#fff"/>
+        <rect x="40" y="96" width="16" height="22" fill="#f97316"/>
+        <rect x="64" y="78" width="16" height="40" fill="#f97316"/>
+        <rect x="88" y="62" width="16" height="56" fill="#f97316"/>
+        <rect x="112" y="48" width="16" height="70" fill="#f97316"/>
+      </g>
+    </g>
+  </g>
+</svg>
