@@ -112,6 +112,12 @@ html.dark .hero-media {
   background-color: #10100e;
 }
 
+@media (max-width: 900px) {
+  html.dark .hero-media {
+    background-color: transparent;
+  }
+}
+
 html.dark .theme-toggle {
   border-color: rgba(236, 230, 220, 0.2);
   color: #ebe4d8;

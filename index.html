@@ -124,6 +124,22 @@
       image-rendering: -webkit-optimize-contrast;
     }
 
+    .hero-media picture {
+      display: contents;
+    }
+
+    /* Tall phones: fill the hero; uses portrait wallpaper-mobile art */
+    @media (max-width: 900px) {
+      .hero-media {
+        background-color: transparent;
+      }
+
+      .hero-media img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
     .motif-line {
       display: flex;
       align-items: center;
@@ -602,14 +618,22 @@
     <!-- Hero -->
     <section class="hero-media relative" aria-label="OctaUnitech">
       <h1 class="sr-only">OctaUnitech Solutions Pvt. Ltd.</h1>
-      <img
-        src="images/wallpaper-1x.png"
-        srcset="images/wallpaper-1x.png 1x, images/wallpaper-2x.png 2x"
-        alt="Cloud migration, Software development, Digital transformation, System integration"
-        width="1920"
-        height="1080"
-        decoding="async"
-      />
+      <picture>
+        <source
+          media="(max-width: 900px)"
+          srcset="images/wallpaper-mobile.jpg"
+          width="576"
+          height="1024"
+        />
+        <img
+          src="images/wallpaper-1x.png"
+          srcset="images/wallpaper-1x.png 1x, images/wallpaper-2x.png 2x"
+          alt="Cloud migration, Software development, Digital transformation, System integration"
+          width="1920"
+          height="1080"
+          decoding="async"
+        />
+      </picture>
     </section>
 
     <!-- Who We Are -->
