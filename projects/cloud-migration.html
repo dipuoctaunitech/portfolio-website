@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("octa-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud migration | OctaUnitech</title>
@@ -127,10 +136,11 @@
       height: 100%;
       overflow: hidden;
       border-radius: 0.2rem;
-      background:
-        radial-gradient(ellipse 70% 45% at 8% 0%, rgba(180, 160, 130, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 100% 10%, rgba(120, 140, 180, 0.1) 0%, transparent 50%),
-        linear-gradient(180deg, #f6f1e8 0%, #faf6ef 45%, #f3ebe0 100%);
+      background-color: #f8f9fb;
+      background-image: url("../images/pastel-wave-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.35),
         0 0 0 1px rgba(70, 78, 88, 0.18),
@@ -186,6 +196,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="../css/theme.css" />
 </head>
 <body class="font-sans text-ink antialiased">
   <div class="page-frame">
@@ -202,7 +213,18 @@
         <a href="../our-works.html" class="nav-link">Our Works</a>
         <a href="../index.html#contact" class="nav-link">Contact</a>
       </nav>
-      <a href="../our-works.html" class="rounded-sm border border-ink/15 px-4 py-2 text-sm font-medium text-ink transition hover:bg-creamSoft">All works</a>
+      <div class="header-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z" />
+              </svg>
+              <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            </button>
+                        <a href="../our-works.html" class="rounded-sm border border-ink/15 px-4 py-2 text-sm font-medium text-ink transition hover:bg-creamSoft">All works</a>
+          </div>
     </div>
   </header>
 
@@ -336,5 +358,6 @@
     }, { threshold: 0.15 });
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
   </script>
+  <script src="../js/theme.js"></script>
 </body>
 </html>
